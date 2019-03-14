@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><country CHName="中国" ENName="China" >
+	<region RId="101000000" CHName="广东省" ENName="guangdong" >
+		<city CityId="101280101" CHName="广州" ENName="guangzhou" Province="广东"/>
+		<city CityId="101280102" CHName="番禺" ENName="panyu" Province="广东"/>
+		<city CityId="101280103" CHName="从化" ENName="conghua" Province="广东"/>
+		<city CityId="101280104" CHName="增城" ENName="zengcheng" Province="广东"/>
+		<city CityId="101280105" CHName="花都" ENName="huadu" Province="广东"/>
+		<city CityId="101280201" CHName="韶关" ENName="shaoguan" Province="广东"/>
+		<city CityId="101280202" CHName="乳源" ENName="ruyuan" Province="广东"/>
+		<city CityId="101280203" CHName="始兴" ENName="shixing" Province="广东"/>
+		<city CityId="101280204" CHName="翁源" ENName="wengyuan" Province="广东"/>
+		<city CityId="101280205" CHName="乐昌" ENName="lechang" Province="广东"/>
+		<city CityId="101280206" CHName="仁化" ENName="renhua" Province="广东"/>
+		<city CityId="101280207" CHName="南雄" ENName="nanxiong" Province="广东"/>
+		<city CityId="101280208" CHName="新丰" ENName="xinfeng" Province="广东"/>
+		<city CityId="101280209" CHName="曲江" ENName="qujiang" Province="广东"/>
+		<city CityId="101280210" CHName="浈江" ENName="chengjiang" Province="广东"/>
+		<city CityId="101280211" CHName="武江" ENName="wujiang" Province="广东"/>
+		<city CityId="101280301" CHName="惠州" ENName="huizhou" Province="广东"/>
+	</region>
+	<region RId="100000000" CHName="黑龙江省" ENName="heilongjiang">
+		<city CityId="100000001" CHName="鸡西" ENName="jixi" Province="黑龙江"/>
+		<city CityId="100000002" CHName="哈尔滨" ENName="harbin" Province="黑龙江"/>
+		<city CityId="100000003" CHName="齐齐哈尔" ENName="qiqihaer" Province="黑龙江"/>
+		<city CityId="100000004" CHName="牡丹江" ENName="mudanjiang" Province="黑龙江"/>
+		<city CityId="100000005" CHName="大庆" ENName="daqing" Province="黑龙江"/>
+		<city CityId="100000006" CHName="佳木斯" ENName="jiamusi" Province="黑龙江"/>
+	</region></country>

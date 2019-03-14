@@ -1,0 +1,14 @@
+com.datou.file	:	excel （downModel.xlsx模版数据）
+
+http://localhost:8080/fexp/					默认页面	 跳转excel文件上传	跳转excel文件列表
+http://localhost:8080/fexp/file/upload	 	跳转excel文件上传
+http://localhost:8080/fexp/file/list		跳转excel文件列表
+
+
+
+con.datou.xml	:	xml	（country.xml模版数据）
+
+http://localhost:8080/fexp/xml/readXml		读取xml文件
+http://localhost:8080/fexp/xml/writeXml		生成xml文件
+（web.xml配置 XmlFilterListener监听，初始化通过读取config.properties配置文件，
+通过task.xml进行控制xml文件更新，true为更新xml，调用线程方法，实现开关控制 是否更新。）

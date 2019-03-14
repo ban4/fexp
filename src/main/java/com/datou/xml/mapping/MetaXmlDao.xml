@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.datou.xml.dao.MetaXmlDao">
+  <resultMap id="BaseResultMap" type="com.datou.xml.model.MetaXml">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="REGION_ID" jdbcType="VARCHAR" property="regionId" />
+    <result column="REGION_CHNAME" jdbcType="VARCHAR" property="regionChname" />
+    <result column="REGION_ENNAME" jdbcType="VARCHAR" property="regionEnname" />
+    <result column="CITY_ID" jdbcType="VARCHAR" property="cityId" />
+    <result column="CITY_CHNAME" jdbcType="VARCHAR" property="cityChname" />
+    <result column="CITY_ENNAME" jdbcType="VARCHAR" property="cityEnname" />
+    <result column="CITY_PROVINCE" jdbcType="VARCHAR" property="cityProvince" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, REGION_ID, REGION_CHNAME, REGION_ENNAME, CITY_ID, CITY_CHNAME, CITY_ENNAME, CITY_PROVINCE
+  </sql>
+<!--   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from meta_xml
+    where ID = #{id,jdbcType=INTEGER}
+  </select> -->
+<!--   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from meta_xml
+    where ID = #{id,jdbcType=INTEGER}
+  </delete> -->
+<!--   <insert id="insert" parameterType="com.datou.xml.model.MetaXml">
+    insert into meta_xml (ID, REGION_ID, REGION_CHNAME, 
+      REGION_ENNAME, CITY_ID, CITY_CHNAME, 
+      CITY_ENNAME, CITY_PROVINCE)
+    values (#{id,jdbcType=INTEGER}, #{regionId,jdbcType=VARCHAR}, #{regionChname,jdbcType=VARCHAR}, 
+      #{regionEnname,jdbcType=VARCHAR}, #{cityId,jdbcType=VARCHAR}, #{cityChname,jdbcType=VARCHAR}, 
+      #{cityEnname,jdbcType=VARCHAR}, #{cityProvince,jdbcType=VARCHAR})
+  </insert> -->
+  <insert id="insertSelective" parameterType="com.datou.xml.model.MetaXml">
+    insert into meta_xml
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="regionId != null">
+        REGION_ID,
+      </if>
+      <if test="regionChname != null">
+        REGION_CHNAME,
+      </if>
+      <if test="regionEnname != null">
+        REGION_ENNAME,
+      </if>
+      <if test="cityId != null">
+        CITY_ID,
+      </if>
+      <if test="cityChname != null">
+        CITY_CHNAME,
+      </if>
+      <if test="cityEnname != null">
+        CITY_ENNAME,
+      </if>
+      <if test="cityProvince != null">
+        CITY_PROVINCE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="regionId != null">
+        #{regionId,jdbcType=VARCHAR},
+      </if>
+      <if test="regionChname != null">
+        #{regionChname,jdbcType=VARCHAR},
+      </if>
+      <if test="regionEnname != null">
+        #{regionEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="cityChname != null">
+        #{cityChname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityEnname != null">
+        #{cityEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityProvince != null">
+        #{cityProvince,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+<!--   <update id="updateByPrimaryKeySelective" parameterType="com.datou.xml.model.MetaXml">
+    update meta_xml
+    <set>
+      <if test="regionId != null">
+        REGION_ID = #{regionId,jdbcType=VARCHAR},
+      </if>
+      <if test="regionChname != null">
+        REGION_CHNAME = #{regionChname,jdbcType=VARCHAR},
+      </if>
+      <if test="regionEnname != null">
+        REGION_ENNAME = #{regionEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        CITY_ID = #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="cityChname != null">
+        CITY_CHNAME = #{cityChname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityEnname != null">
+        CITY_ENNAME = #{cityEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="cityProvince != null">
+        CITY_PROVINCE = #{cityProvince,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update> -->
+<!--   <update id="updateByPrimaryKey" parameterType="com.datou.xml.model.MetaXml">
+    update meta_xml
+    set REGION_ID = #{regionId,jdbcType=VARCHAR},
+      REGION_CHNAME = #{regionChname,jdbcType=VARCHAR},
+      REGION_ENNAME = #{regionEnname,jdbcType=VARCHAR},
+      CITY_ID = #{cityId,jdbcType=VARCHAR},
+      CITY_CHNAME = #{cityChname,jdbcType=VARCHAR},
+      CITY_ENNAME = #{cityEnname,jdbcType=VARCHAR},
+      CITY_PROVINCE = #{cityProvince,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update> -->
+<select id="queryRegion" resultType="com.datou.xml.model.Region">
+	SELECT 
+		REGION_ID AS rid,
+		REGION_CHNAME AS chname,
+		REGION_ENNAME AS enname
+	FROM meta_xml GROUP BY REGION_ID 
+</select>  
+  
+<select id="queryCity" resultType="com.datou.xml.model.City">
+	SELECT 
+		CITY_ID AS cityId,
+		CITY_CHNAME AS chname,
+		CITY_ENNAME AS enname,
+		CITY_PROVINCE AS province
+	FROM meta_xml 
+</select>    
+</mapper>

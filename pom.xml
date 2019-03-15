@@ -211,6 +211,13 @@
 		    <artifactId>ezmorph</artifactId>
 		    <version>1.0.6</version>
 		</dependency>
+		
+		<!-- XStream: XmlUtils -->
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.10</version>
+		</dependency>
 
 	</dependencies>  
 </project>
